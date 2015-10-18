@@ -1,0 +1,26 @@
+{
+  "name": "spa-template",
+  "version": "1.0.0",
+  "description": "Template for a React-based Single Page App",
+  "author": "Randy Burgess <wrburgess@gmail.com>",
+  "scripts": {
+    "npmv": "npm -v",
+    "nodev": "node -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wrburgess/spa-template/issues"
+  },
+  "bugs": {
+    "url": "https://github.com/wrburgess/spa-template/issues"
+  },
+  "keywords": [
+    "react",
+    "single page app"
+  ],
+  "dependencies": {
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {},
+  "license": "MIT"
+}
