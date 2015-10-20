@@ -17,6 +17,8 @@
 * Set to latest stable version `sudo n stable`
 * Check node version `node -v`
 * ref: [http://davidwalsh.name/upgrade-nodejs](http://davidwalsh.name/upgrade-nodejs)
+* Troubleshooting: [Fixing npm On Mac OS X for Homebrew Users](Fixing npm On Mac OS X for Homebrew Users)
+* Troubleshooting: [How do I completely uninstall Node.js, and reinstall from beginning (Mac OS X)](http://stackoverflow.com/questions/11177954/how-do-i-completely-uninstall-node-js-and-reinstall-from-beginning-mac-os-x)
 
 ## Setup npm
 
@@ -25,7 +27,7 @@
 
 ## Install npm modules
 
-* Create a `package.json` file in root
+* Create a `package.json` file in root (you can also use `npm init`)
 
 ```
 {
@@ -85,3 +87,63 @@ gulp.task('default', function() {
   // place code for your default task here
 });
 ```
+
+## Setup gulp for sass
+
+* Reference: [A Simple Gulp’y Workflow For Sass](http://www.sitepoint.com/simple-gulpy-workflow-sass/)
+
+### Install packages
+
+* Install gulp-sass: `npm install gulp-sass --save-dev`
+* Install gulp-sass: `npm install gulp-autoprefixer --save-dev`
+* Install gulp-sass: `npm install gulp-sourcemaps --save-dev`
+* Install sassdoc:   `npm install sassdoc --save-dev`
+
+### Create variables
+
+* Add to `gulpfile.js`:
+
+```
+var sass_scss_path = 'src/stylesheets/scss/*.scss';
+var sass_css_path = 'src/stylesheets/css/';
+var sassOptions = {
+  errLogToConsole: true,
+  outputStyle: 'expanded'
+};
+```
+
+### Add references to libraries
+
+* Add to `gulpfile.js`:
+
+```
+var sass = require('gulp-sass');`
+var sourcemaps = require('gulp-sourcemaps');`
+var autoprefixer = require('gulp-autoprefixer');`
+```
+
+### Add sass task
+
+* Add a new task to the `gulpfile.js`:
+
+```
+gulp.task('sass', function() {
+  return gulp
+    .src('src/styles/scss/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('src/styles/css/'));
+});
+```
+
+gulp.task('sass', function () {
+  return gulp
+    .src(input)
+    .pipe(sourcemaps.init())
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(output));
+    .pipe(sassdoc())
+    .resume();
+});
