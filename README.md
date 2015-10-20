@@ -1,6 +1,5 @@
 # Single Page App Template
 
-* Setup Sublime Text 3
 * Setup Linting
 * Setup Gulp
 * Setup Webpack
@@ -59,4 +58,17 @@
 
 * Install an npm module `npm install lodash --save`
 
+## Setup SublimeText 3
 
+* Install the Babel package:
+  - [https://packagecontrol.io/packages/Babel](https://packagecontrol.io/packages/Babel)
+  - Open a `js` file with that extension
+  - Select View from the menu
+  - Then `Syntax -> Open all with current extension as...` -> `Babel` -> `JavaScript (Babel)`
+  - Repeat this for each extension (e.g.: .js and .jsx)
+
+* Install Babel-Snippets
+  - [https://packagecontrol.io/packages/Babel%20Snippets](https://packagecontrol.io/packages/Babel%20Snippets)
+
+* Enable Emmet in JSX files with Sublime React plugin
+  - [https://gist.github.com/wrburgess/5b6d75c2bd13c36a28b4](https://gist.github.com/wrburgess/5b6d75c2bd13c36a28b4)
