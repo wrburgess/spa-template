@@ -72,3 +72,16 @@
 
 * Enable Emmet in JSX files with Sublime React plugin
   - [https://gist.github.com/wrburgess/5b6d75c2bd13c36a28b4](https://gist.github.com/wrburgess/5b6d75c2bd13c36a28b4)
+
+## Setup gulp
+
+* Install gulp locally: `npm install --save-dev gulp`
+* Create gulpfile.js at root
+
+```
+var gulp = require('gulp');
+
+gulp.task('default', function() {
+  // place code for your default task here
+});
+```
