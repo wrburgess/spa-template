@@ -11,7 +11,7 @@
 * Setup Flux
 * Setup Deployment to AWS
 
-## Setup Node
+## Setup node
 
 * Clean out the npm cache `sudo npm cache clean -f`
 * Install the latest node `sudo npm install -g n`
@@ -58,3 +58,5 @@
 ```
 
 * Install an npm module `npm install lodash --save`
+
+
